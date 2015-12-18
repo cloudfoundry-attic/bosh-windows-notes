@@ -1,0 +1,8 @@
+---
+name: consul
+
+templates:
+  start.ps1.erb: bin/start.ps1
+
+packages:
+  - consul
