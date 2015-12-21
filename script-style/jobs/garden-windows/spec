@@ -3,6 +3,7 @@ name: garden-windows
 
 templates:
   start.ps1.erb: bin/start.ps1
+  pre-start.ps1.erb: bin/pre-start.ps1
 
 packages:
   - garden-windows

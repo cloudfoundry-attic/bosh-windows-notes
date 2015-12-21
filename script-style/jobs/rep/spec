@@ -1,8 +1,0 @@
----
-name: rep
-
-templates:
-  drain.ps1.erb: bin/drain.ps1
-
-packages:
-  - rep

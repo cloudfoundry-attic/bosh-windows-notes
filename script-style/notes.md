@@ -1,4 +1,4 @@
-process hierarchy: 
+# process hierarchy
 
 - agent
     - run service wrapper
@@ -20,3 +20,9 @@ SOLUTION:
 Now the service wrapper can kill the job object on stop, which will kill the
 script and the subprocess
 
+
+# multiple processes per job
+
+Not really sure how to solve this with the model of one start.ps1 script per
+job. We can't start multiple processes per script because then we'd lose the
+ability to monitor them individually. 

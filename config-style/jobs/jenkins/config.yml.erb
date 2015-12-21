@@ -1,0 +1,14 @@
+{"services":
+  [
+    {
+      "env": [{"JENKINS_MODE": "awesome"}],
+      "executable": "java",
+      "arguments": "-Xrs -Xmx256m -jar \".\\jenkins.war\" --httpPort=8080",
+      "prestart": {
+        "executable": "prestart.exe",
+        "arguments": "--flags-go-here",
+      },
+      "prestart": "bin/prestart.ps1"
+    },
+  ]
+}
