@@ -1,0 +1,19 @@
+{"processes":
+  {
+    "jenkins_server": {
+      "env": [{"JENKINS_MODE": "awesome"}],
+      "executable": "java",
+      "arguments": "-Xrs -Xmx256m -jar \".\\jenkins.war\" --httpPort=5555",
+      "instances": 3
+    },
+    "jenkins_worker": {
+      "executable": "worker.exe",
+      "depends": ["jenkins_server", "docker_agent"],
+      "instances": "{{worker.instances.count}}"
+    }
+  },
+  "prestart": {
+    "executable": "powershell"
+    "arguments": "prestart.ps1 --flags",
+  }
+}
