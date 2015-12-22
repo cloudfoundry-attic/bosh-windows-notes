@@ -3,12 +3,14 @@
     {
       "env": [{"JENKINS_MODE": "awesome"}],
       "executable": "java",
-      "arguments": "-Xrs -Xmx256m -jar \".\\jenkins.war\" --httpPort=8080",
-      "prestart": {
-        "executable": "prestart.exe",
-        "arguments": "--flags-go-here",
-      },
-      "prestart": "bin/prestart.ps1"
+      "arguments": "-Xrs -Xmx256m -jar \".\\jenkins.war\" --httpPort=<%= i.port %>"
     },
-  ]
+    {"executable": "foo.exe"},
+    "instances": 3
+  ],
+  "prestart": "bin/prestart.ps1",
+  "prestart": {
+    "executable": "prestart.exe",
+    "arguments": "--flags-go-here"
+  }
 }
