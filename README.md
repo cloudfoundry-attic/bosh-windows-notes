@@ -18,7 +18,7 @@ We also played around with the idea of allowing some limited interpolation, more
   - the number of instances of a process (https://github.com/cloudfoundry/bosh/blob/ed9be10942e932958aa3aa42f7d46d2dd5f3997c/release/jobs/director/monit#L9)
   - whether it runs at all based on booleans (https://github.com/cloudfoundry-incubator/consul-release/blob/6cef9ce124b9df138ed1ef0ef4159f5807bc8a2a/jobs/consul_agent/monit#L7)
     - maybe these imperative booleans imply separate inter-dependent releases?
-- an idea for concourse-style "values only" interpolation: https://github.com/cloudfoundry-incubator/bosh-windows-notes/blob/e7d75d32eebd27b828d39235c773bd0435700199/config-style/jobs/jenkins/processes.yml.erb#L12
+- an idea for concourse-style "values only" interpolation [](config-style/jobs/jenkins/processes.yml#L12)
 
 ### Stop scripts
 - do we need to allow users to provide a prestop script? do all Monit ctl scripts just call `kill_and_wait`?
