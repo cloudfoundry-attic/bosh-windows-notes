@@ -9,7 +9,7 @@
     "jenkins_worker": {
       "executable": "worker.exe",
       "depends": ["jenkins_server", "docker_agent"],
-      "instances": "{{worker.instances.count}}"
+      "instances": "{{properties.workers}}"
     }
   },
   "prestart": {
