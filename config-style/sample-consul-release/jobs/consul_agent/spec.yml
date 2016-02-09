@@ -1,0 +1,28 @@
+---
+name: consul
+packages:
+- consul
+templates:
+  bin/pre-start: bin/pre-start.ps1
+
+properties:
+  consul.machine_name:
+    description: consul.machine_name
+    default: WIN1938NZSD
+  consul.machine_ip:
+    description: consul machine_ip
+    default: 10.10.10.10
+  consul.enable_ssl:
+    description: consul enable_ssl
+    default: false
+
+	consul.ca_file:
+		description: consul ca_file
+	consul.key_file:
+		description: consul key_file
+	consul.cert_file:
+		description: consul cert_file
+	consul.start_join:
+		description: list of ips that consul likes to start join in
+	consul.retry_join:
+		description: list of ips that consul likes to retry join in
