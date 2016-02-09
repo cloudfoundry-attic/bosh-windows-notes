@@ -1,18 +1,18 @@
 ---
 env:
-	LOG_DIR: '\var\vcap\sys\log\consul_agent'
-	RUN_DIR: '\var\vcap\sys\run\consul_agent'
-	DATA_DIR: '\var\vcap\store\consul_agent'
-	CONF_DIR: '\var\vcap\jobs\consul_agent\config'
-	CERT_DIR: '\var\vcap\jobs\consul_agent\config\certs'
+  LOG_DIR: '\var\vcap\sys\log\consul_agent'
+  RUN_DIR: '\var\vcap\sys\run\consul_agent'
+  DATA_DIR: '\var\vcap\store\consul_agent'
+  CONF_DIR: '\var\vcap\jobs\consul_agent\config'
+  CERT_DIR: '\var\vcap\jobs\consul_agent\config\certs'
 prestart:
-	executable: '\var\vcap\jobs\consul\bin\pre-start.ps1'
+  executable: '\var\vcap\jobs\consul\bin\pre-start.ps1'
 processes:
 - name: consul
-	executable: '\var\vcap\packages\bin\consul.exe'
-	args:
-	- "agent"
-	- "-config-dir"
-	- '\var\vcap\jobs\consul_agent\config'
-	- '1| logger -p user.error -t vcap.consul-agent -f \var\vcap\sys\log\consul\consul.stdout.log'
-	- '2| logger -p user.error -t vcap.consul-agent -f \var\vcap\sys\log\consul\consul.stderr.log'
+  executable: '\var\vcap\packages\bin\consul.exe'
+  args:
+  - "agent"
+  - "-config-dir"
+  - '\var\vcap\jobs\consul_agent\config'
+  - '1| logger -p user.error -t vcap.consul-agent -f \var\vcap\sys\log\consul\consul.stdout.log'
+  - '2| logger -p user.error -t vcap.consul-agent -f \var\vcap\sys\log\consul\consul.stderr.log'
